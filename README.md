@@ -199,10 +199,3 @@ docker exec -it namenode hdfs dfsadmin -safemode leave
 * Visualizar resultados en HDFS y en interfaz web
 * Todo en la nube, sin instalar Hadoop localmente
 
----
-
-## Créditos
-
-Proyecto desarrollado por \[Plinior Zavala] — Basado en una guía para entornos educativos y de práctica en la nube con Pig + Hadoop.
-
-```
