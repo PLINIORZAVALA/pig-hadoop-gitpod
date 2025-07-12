@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  namenode:
+    image: suhothayan/hadoop-spark-pig-hive:2.9.2
+    container_name: namenode
+    ports:
+      - "9870:9870"
+    command: /etc/bootstrap.sh namenode
+
+  datanode:
+    image: suhothayan/hadoop-spark-pig-hive:2.9.2
+    container_name: datanode
+    depends_on:
+      - namenode
+    command: /etc/bootstrap.sh datanode
+
+  pig:
+    image: suhothayan/hadoop-spark-pig-hive:2.9.2
+    container_name: pig
+    depends_on:
+      - namenode
+      - datanode
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./datasets:/datos
+      - ./pig/scripts:/scripts

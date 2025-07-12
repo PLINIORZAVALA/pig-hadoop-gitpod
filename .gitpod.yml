@@ -1,0 +1,10 @@
+image: gitpod/workspace-full
+
+tasks:
+  - init: docker-compose up -d && sleep 30
+    command: echo "Entorno Hadoop + Pig levantado en la nube"
+
+ports:
+  - port: 9870
+    onOpen: open-preview
+    visibility: public
